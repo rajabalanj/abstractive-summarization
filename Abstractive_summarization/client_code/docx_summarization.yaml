@@ -1,0 +1,126 @@
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#DF1F2D', visible: true, text: Back, font_size: 14, font: times new roman,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'ONAGCH,PEGXBK'}
+    event_bindings: {click: button_1_click}
+  - type: FileLoader
+    properties:
+      role: null
+      show_state: true
+      align: center
+      tooltip: ''
+      border: ''
+      file_types: .docx
+      enabled: true
+      files: []
+      foreground: theme:Primary 500
+      visible: true
+      text: Upload docx file
+      font_size: 14
+      font: t
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      file: null
+      background: ''
+      bold: false
+      underline: false
+      multiple: false
+      icon: fa:upload
+    name: file_loader_1
+    layout_properties: {grid_position: 'YFSVOH,PEIPEV'}
+    data_bindings: []
+    event_bindings: {change: file_loader_1_change}
+  - type: TextArea
+    properties: {role: null, align: left, height: 217, tooltip: '', placeholder: Extracted text,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 14,
+      auto_expand: false, font: times new roman, spacing_above: small, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false}
+    name: text_area_1
+    layout_properties: {grid_position: 'BUJMAV,WYGLTX'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: enter percentage of text to be present in summay,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 14,
+      font: times new roman, spacing_above: small, type: number, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false}
+    name: percentage
+    layout_properties: {grid_position: 'YJLNFE,LXBBNP', full_width_row: false}
+    event_bindings: {pressed_enter: text_box_1_pressed_enter}
+  - type: Button
+    properties: {role: secondary-color, align: right, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: summarize, font_size: 14, font: times new roman,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: 'theme:Primary 500', bold: false, underline: false, icon: ''}
+    name: submit
+    layout_properties: {grid_position: 'YJLNFE,NKWIGM', full_width_row: false}
+    event_bindings: {click: primary_color_1_click}
+  - type: Label
+    properties: {role: headline, align: left, tooltip: '', border: '', foreground: 'theme:Black',
+      visible: true, text: 'Summary:', font_size: 14, font: times new roman, spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: headline_1
+    layout_properties: {grid_position: 'HFOVBT,FTFPFQ'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: times new roman, spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: summary
+    layout_properties: {grid_position: 'DCAINW,CIUEGS'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '                      No of words in the original text:',
+      font_size: 14, font: times new roman, spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'REOOGR,PGLIGQ'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: 14, font: times new roman, spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: words_original
+    layout_properties: {grid_position: 'REOOGR,TYZQMF'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '                          NO of words in the summary:',
+      font_size: 14, font: times new roman, spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_3
+    layout_properties: {slot: default, grid_position: 'RUPUQS,WNXLQL'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: 14, font: times new roman, spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: words_summary
+    layout_properties: {grid_position: 'RUPUQS,WEBQFR'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components: []
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: Docx summarization, font_size: null, font: times new roman,
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false, icon: ''}
+  name: label_1
+  layout_properties: {slot: title, grid_position: 'NIVQYF,ZYNGMW'}
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: '@theme:standard-page.html'}
